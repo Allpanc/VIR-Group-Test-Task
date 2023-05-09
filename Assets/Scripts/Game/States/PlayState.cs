@@ -8,7 +8,7 @@ using VIRGroupTestTask.WaySystem;
 
 namespace VIRGroupTestTask.GameCore.States
 {
-    public class GamePlayState : IState
+    public class PlayState : IState
     {
         private GameStateMachine _stateMachine;
 
@@ -19,7 +19,7 @@ namespace VIRGroupTestTask.GameCore.States
         private LineDrawer _lineDrawer;
         private MoveStarter _moveStarter;
 
-        public GamePlayState(GameStateMachine stateMachine, List<PlayerFacade> players, FinishChecker finishCkecker, MenuSwitcher menuSwitcher, LineDrawer lineDrawer, MoveStarter moveStarter)
+        public PlayState(GameStateMachine stateMachine, List<PlayerFacade> players, FinishChecker finishCkecker, MenuSwitcher menuSwitcher, LineDrawer lineDrawer, MoveStarter moveStarter)
         {
             _stateMachine = stateMachine;
             _players = players;
@@ -59,9 +59,9 @@ namespace VIRGroupTestTask.GameCore.States
         }
 
         private void Victory() =>
-            _stateMachine.Enter<GameWinState>();
+            _stateMachine.Enter<WinState>();
 
         private void Loss() =>
-            _stateMachine.Enter<GameLoseState>();
+            _stateMachine.Enter<LoseState>();
     }
 }

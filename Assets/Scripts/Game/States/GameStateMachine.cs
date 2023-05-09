@@ -19,11 +19,11 @@ namespace VIRGroupTestTask.GameCore.States
         {
             _states = new Dictionary<Type, IExitableState>()
             {
-                [typeof(GamePlayState)] = new GamePlayState(this, players, new FinishChecker(players), menuSwitcher, lineDrawer, new MoveStarter(lineDrawer, players)),
-                [typeof(GameWinState)] = new GameWinState(menuSwitcher),
-                [typeof(GameLoseState)] = new GameLoseState(menuSwitcher),
-                [typeof(GamePauseState)] = new GamePauseState(menuSwitcher),
-                [typeof(GameLoadLevelState)] = new GameLoadLevelState(),
+                [typeof(PlayState)] = new PlayState(this, players, new FinishChecker(players), menuSwitcher, lineDrawer, new MoveStarter(lineDrawer, players)),
+                [typeof(WinState)] = new WinState(menuSwitcher),
+                [typeof(LoseState)] = new LoseState(menuSwitcher),
+                [typeof(PauseState)] = new PauseState(menuSwitcher),
+                [typeof(LoadLevelState)] = new LoadLevelState(),
             };
         }
 

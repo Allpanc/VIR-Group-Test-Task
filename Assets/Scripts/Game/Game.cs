@@ -33,24 +33,24 @@ namespace VIRGroupTestTask.GameCore
         }
 
         public void Pause() => 
-            _stateMachine.Enter<GamePauseState>();
+            _stateMachine.Enter<PauseState>();
 
         public void Play() => 
-            _stateMachine.Enter<GamePlayState>();
+            _stateMachine.Enter<PlayState>();
 
         public void Win() => 
-            _stateMachine.Enter<GameWinState>();
+            _stateMachine.Enter<WinState>();
 
         public void Lose() => 
-            _stateMachine.Enter<GameLoseState>();
+            _stateMachine.Enter<LoseState>();
 
         public void Reload() => 
-            _stateMachine.Enter<GameLoadLevelState, int>(SceneManager.GetActiveScene().buildIndex);
+            _stateMachine.Enter<LoadLevelState, int>(SceneManager.GetActiveScene().buildIndex);
 
         public void PlayNextLevel() => 
-            _stateMachine.Enter<GameLoadLevelState, int>(SceneManager.GetActiveScene().buildIndex + 1);
+            _stateMachine.Enter<LoadLevelState, int>(SceneManager.GetActiveScene().buildIndex + 1);
 
         public void GoToMenu() => 
-            _stateMachine.Enter<GameLoadLevelState, int>(0);
+            _stateMachine.Enter<LoadLevelState, int>(0);
     }
 }

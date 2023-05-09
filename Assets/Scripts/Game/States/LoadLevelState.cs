@@ -3,7 +3,7 @@ using VIRGroupTestTask.Infrastructure;
 
 namespace VIRGroupTestTask.GameCore.States
 {
-    public class GameLoadLevelState : IPayloadedState<int>
+    public class LoadLevelState : IPayloadedState<int>
     {
         public void Enter(int buildIndex)
         {

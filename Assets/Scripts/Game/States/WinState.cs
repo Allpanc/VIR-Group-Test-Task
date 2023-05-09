@@ -4,16 +4,16 @@ using VIRGroupTestTask.Menu;
 
 namespace VIRGroupTestTask.GameCore.States
 {
-    public class GameLoseState : IState
+    public class WinState : IState
     {
         private MenuSwitcher _menuSwitcher;
 
-        public GameLoseState(MenuSwitcher menuSwitcher) => 
+        public WinState(MenuSwitcher menuSwitcher) => 
             _menuSwitcher = menuSwitcher;
 
         public void Enter()
         {
-            _menuSwitcher.ShowLossMenu();
+            _menuSwitcher.ShowVictoryMenu();
             Time.timeScale = 0;
         }
 
